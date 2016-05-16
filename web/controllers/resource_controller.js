@@ -84,7 +84,7 @@
             });
 
             $scope.additionData = function(){
-                $http.post('http://rr.com/rest.php/resources/additiondata', JSON.stringify($scope.cachCoordArray))
+                $http.post('rest.php/resources/additiondata', JSON.stringify($scope.cachCoordArray))
                     .then(successHandler)
                     .catch(errorHandler);
                 function successHandler(data) {
