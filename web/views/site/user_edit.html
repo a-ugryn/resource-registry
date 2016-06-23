@@ -1,0 +1,71 @@
+<div class="jumbotron col-md-6 md-login">
+    <h2>Редагування користувача</h2>
+    <form name="form" role="form" ng-submit="userEdit.editUser()">
+        <!-- <div class="form-group" >
+            <input ng-model="vm.user.role_id" type="radio" name="role" value="1"/>
+            <label for="role">Співвласник</label>
+            <input ng-model="vm.user.role_id" type="radio" name="role" value="4"/>
+            <label for="role">Уповноважений</label>
+            <input ng-model="vm.user.role_id" type="radio" name="role" value="2"/>
+            <label for="role">Реєстратор</label>
+            <input ng-model="vm.user.role_id" ng-if="currentUser.role === 'admin'" type="radio" name="role" value="3"/> 
+            <label ng-if="currentUser.role === 'admin'" for="role">Адміністратор</label>
+        </div> -->
+        <div class="form-group">
+            <!-- <label for="role_name">Роль<sup>*</sup></label>
+            <select id="user-role-selector" ng-model="changeRoleId" ng-change="changeRole(changeRoleId, data.user_id)">
+                <option value="{{item.role_id}}" selected hidden>{{data.role_name}}</option>
+                <option ng-repeat="item in roleFound" value="{{item.role_id}}" ng-hide="data.role_name == item.role_name">{{item.role_name}}</option>
+            </select> -->
+        </div>
+        <div class="form-group">
+            <label for="username">Логін<sup>*</sup></label>
+            <input type="text" name="username" class="form-control" ng-model="userEdit.user.username" required readonly/>
+        </div>
+        <div class="form-group" >
+            <label for="email">Поштова скринька<sup>*</sup></label>
+            <input type="text" name="firstName" class="form-control" ng-model="userEdit.user.email" required readonly/>
+        </div>
+        <div class="form-group" >
+            <label for="lastName">Прізвище<sup>*</sup></label>
+            <input type="text" name="lastName" class="form-control" ng-model="userEdit.user.last_name" required />
+        </div>
+        <div class="form-group" >
+            <label for="firstName">Ім'я<sup>*</sup></label>
+            <input type="text" name="firstName" class="form-control" ng-model="userEdit.user.first_name" required />
+        </div>
+        <div class="form-group" >
+            <label for="secondName">По батькові</label>
+            <input type="text" name="lastName" class="form-control" ng-model="userEdit.user.middle_name" />
+        </div>
+        <div class="form-group" >
+            <label for="passportSeries">Серія паспорта<sup>*</sup></label>
+            <input type="text" name="lastName" class="form-control" ng-model="userEdit.user.passport_series" required />
+        </div>
+        <div class="form-group" >
+            <label for="passportNumber">Номер паспорта<sup>*</sup></label>
+            <input type="text" name="lastName" class="form-control" ng-model="userEdit.user.passport_number" required />
+        </div>
+        <div class="form-group" >
+            <label for="address">Адреса<sup>*</sup></label>
+            <input type="text" name="lastName" class="form-control" ng-model="userEdit.user.address" required />
+        </div>
+        <div class="form-group">
+            <label for="role_name">Роль<sup>*</sup></label>
+            <input type="text" name="roleName" class="form-control" ng-model="userEdit.user.role_name" required />
+            <!-- <select id="user-role-selector" ng-model="changeRoleId" ng-change="changeRole(changeRoleId, userEdit.user.user_id)">
+                <option value="" selected hidden>{{userEdit.user.role_name}}</option>
+                <option ng-repeat="item in userEdit.user.roleFound" value="{{item.role_id}}" ng-hide="userEdit.user.roleFound.items.item.role_name == item.role_name">{{item.role_name}}</option>
+            </select> -->
+        </div>
+        <div ng-if="currentUser.role === 'admin'" class="form-group" >
+            <label for="community">Громада<sup>*</sup></label>
+            <input type="text" name="communityName" class="form-control" ng-model="userEdit.user.community_name" required />
+            <!-- <dropdown-list data-items-list="vm.itemsList" data-search-result="vm.community" data-placeholder="пошук"></dropdown-list>  -->
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Змінити</button>
+            <a href="site/users" class="btn btn-link">Відмінити</a>
+        </div>
+    </form>
+</div>
